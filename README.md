@@ -17,5 +17,8 @@
 - 下载某一话的所有图片，文件名为 `master-xxxxx-xx.jpg`
 - 下载该话的 `contentsInfo.json` 文件
 
+![contents](img/contents.png)
+![example](img/example.png)
+
 ### 运行
 将图片和 json 文件放入 origin 文件夹中，运行 `main.py`，处理好的图片会生成在当前目录的 restored 文件夹下。
