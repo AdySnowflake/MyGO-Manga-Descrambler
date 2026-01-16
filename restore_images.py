@@ -1,6 +1,5 @@
 from PIL import Image
-import os
-import json
+
 
 def restore_image(image_path, scramble, output_path):
     img = Image.open(image_path)
