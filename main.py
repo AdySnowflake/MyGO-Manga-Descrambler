@@ -26,3 +26,12 @@ try:
     print("✅ 已清空 origin 文件夹")
 except Exception as e:
     print(f"❌ 清空 origin 文件夹出错：{e}")
+
+# Step 5: Rename restored folder to episode number
+episode = input("请输入话数：").strip()
+if episode:
+    try:
+        os.rename("restored", episode)
+        print(f"✅ 已将 restored 文件夹重命名为 {episode}")
+    except Exception as e:
+        print(f"❌ 重命名出错：{e}")
