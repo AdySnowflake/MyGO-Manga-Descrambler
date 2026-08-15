@@ -3,7 +3,7 @@ name = "mygo-manga-descrambler"
 version = "0.1.0"
 description = "MyGO Manga Descrambler"
 readme = "README.md"
-requires-python = "==3.12.10"
+requires-python = ">=3.12"
 dependencies = [
     "pillow"
 ]
