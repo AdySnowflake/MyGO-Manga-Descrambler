@@ -13,7 +13,7 @@
 
 ## 使用方法
 ### 前提条件
-- Python
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
 - 下载某一话的所有图片，文件名为 `master-xxxxx-xx.jpg`
 - 下载该话的 `contentsInfo.json` 文件
 
@@ -21,4 +21,24 @@
 ![example](img/example.png)
 
 ### 运行
-将图片和 json 文件放入 origin 文件夹中，运行 `main.py`，处理好的图片会生成在当前目录的 restored 文件夹下。
+首次使用时，在项目根目录执行：
+
+```bash
+uv sync
+```
+
+将图片和 json 文件放入 `origin` 文件夹中，然后执行对应系统的启动脚本：
+
+macOS/Linux：
+
+```bash
+./run.sh
+```
+
+Windows：
+
+```bat
+run.bat
+```
+
+脚本会使用 `uv run main.py` 启动程序，处理好的图片会生成在当前目录的 `restored` 文件夹下。
