@@ -2,26 +2,26 @@ from PIL import Image
 
 
 def restore_image(image_path, scramble, output_path):
-    img = Image.open(image_path)
-    width, height = img.size
-    tile_w = width // 4
-    tile_h = height // 4
+    with Image.open(image_path) as img:
+        width, height = img.size
+        tile_w = width // 4
+        tile_h = height // 4
 
-    # 切块顺序：竖着编号（从上到下，再从左到右）
-    tiles = []
-    for x in range(4):
-        for y in range(4):
-            box = (x * tile_w, y * tile_h, (x + 1) * tile_w, (y + 1) * tile_h)
-            tiles.append(img.crop(box))
+        # 切块顺序：竖着编号（从上到下，再从左到右）
+        tiles = []
+        for x in range(4):
+            for y in range(4):
+                box = (x * tile_w, y * tile_h, (x + 1) * tile_w, (y + 1) * tile_h)
+                tiles.append(img.crop(box))
 
-    new_img = Image.new("RGB", (width, height))
-    for i in range(16):
-        x = (i // 4) * tile_w
-        y = (i % 4) * tile_h
-        tile = tiles[scramble[i]]
-        new_img.paste(tile, (x, y))
+        new_img = Image.new("RGB", (width, height))
+        for i in range(16):
+            x = (i // 4) * tile_w
+            y = (i % 4) * tile_h
+            tile = tiles[scramble[i]]
+            new_img.paste(tile, (x, y))
 
-    new_img.save(output_path, format="PNG")
+        new_img.save(output_path, format="PNG")
     print(f"✅ 已还原：{output_path}")
 
 # # 所有 scramble 列表
