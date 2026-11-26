@@ -5,3 +5,6 @@ __pycache__/
 /img/
 #/origin/
 /restored/
+.edge-profile/
+.venv/
+cookies.json

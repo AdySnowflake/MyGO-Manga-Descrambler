@@ -2,6 +2,6 @@
 chcp 65001 > nul
 
 cd /d "%~dp0"
-uv run main.py
+uv run main.py %*
 
 pause
